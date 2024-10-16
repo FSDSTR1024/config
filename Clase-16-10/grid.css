@@ -1,0 +1,61 @@
+div.grid{
+    display: grid;
+
+    /* Tamaño y número de columnas. Si ponemos 1 solo fuego se creará un grid
+    con añadiendo 1 fila y 3 columnas en este caso, el segundo fuego se pondrá en la 
+    segund columna igual que el tercero, pero cuando se añada el cuarto entonces
+    se creara una nueva fila con otras 3 columnas. 
+    
+    Los valores se pueden poner en %. También podemos usar la unidad fr que hará
+    que se divida el espacio total en fracciones, muy útil para cuando hay un número
+    impar de columnas.
+    
+    grid-template-columns: repeat(n, magnitud) es para cuando tenemos muchas columnas.
+    
+    */
+    /* grid-template-columns: 200px 200px 200px; */
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* Con esto controlamos la casilla del grid donde queremos que vaya un elemento especifico y lo
+    que queremos que ocupe. Estos elementos harán que el resto se ponga en el siguiente libre.
+    
+p#sub{
+    grid-column-start
+    grid-row-start
+}
+*/
+
+header{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: red;
+}
+
+nav{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: green;
+}
+
+aside{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background: yellow;
+}
+
+footer{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    background: blue;
+}

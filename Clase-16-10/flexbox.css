@@ -1,0 +1,55 @@
+/*Para usar flexbox lo mejor es hacer clases para los divs*/
+/*El flexbox se aplica a los hijos directos por lo que lo mejor es usar divs para agrupar las columnas*/
+div.flexbox{
+    display: flex;
+    border: 3px solid red;
+    /* Controla la direccion de los elementos, row es para poner los elementos en columnas y column en filas */
+    /* Es útil por ejemplo para cuando queremos que sea diferente dependiendo del dispositivo */
+    flex-direction: row;
+    /* nonwrap hace que ponga todos lo elementos en la misma fila */
+    /* wrap es para que cuando no quepan cambie de fila */
+    flex-wrap: nowrap;
+
+    /* Tanto el aling como el justify es mejor usar el inspector web y cuando consigamos la disposición que queramos, 
+    copiamos los valores */
+    /* Indica cómo tienen que estar alineados los elementos */
+    align-items: center; 
+    gap: 10px;
+
+    /* Por defecto todo está en el order 0 por lo que los valores mayores se podrán a la derecha
+    y los negativos a la izquierda. No funciona como un array */
+}
+
+p{
+    border: 1px solid blue;
+    /* Por defecto es 1, y es el ritmo de crecimiento de un elemento */
+    /* A medida que haces más grande la pantalla el espacio que añade el grow también se hace más grande, 
+    por lo que el valor del grow es si crece normal grow = 1, o el doble de rápido grow = 2, o el triple grow = 3, etc. */
+    flex-grow: 1;
+    /* Tamaño inicial antes de que actue el grow o el shrink */
+    flex-basis: 0px;
+    /* Igual que el grow pero es ritmo de decrecimiento */
+    /* flex-shrink: 10px; */
+
+    /* Esto es para cuando queremos que todas las columnas se comporten igual, 
+    es la representación de los 3 valores anteriores grow, basis y shrink    
+    flex:1; */
+}
+
+ul{
+    display: flex;
+    padding-left: 0px;
+    border: 3px solid red;
+    /* Esto es para la separación de espacio entre columnas */
+    /* gap: 20px; */
+}
+
+li{
+    list-style: none;
+    margin-right: 10px;
+}
+
+/* Si queremos que el último elemento de la lista no tenga algo que los otros si. Muy útil*/
+li:last-child{
+    margin-right: 0;
+}
